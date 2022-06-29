@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Productivity</title>
+</head>
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+        <div class="container">
+          <a href="index.html" class="navbar-brand">Productivity</a>
+  
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navmenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <div >
+                    <div class="input-group mx-3">
+                        <div class="form-group">
+                          <input type="search" id="form1" class="form-control" style="height: 30px;" placeholder="Search"/>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm" style="height: 30px;">
+                            <i class="bi-search"></i>
+                        </button>
+                      </div>
+                </div>
+              <li class="nav-item">
+                <a href="userPage.html" class="nav-link text-warning">Name Forename</a>
+              </li>
+              <li class="nav-item">
+                <a href="userSettings.html" class="nav-link">Settings</a>
+              </li>
+              <li class="nav-item">
+                <a href="logout.html" class="nav-link">Log out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <section style="margin-top: 80px; position: relative; max-width: 50px;">
+        <div class="d-flex flex-column flex-shrink-0 bg-primary sidenav" id="sidebar">
+            <div><a class="nav-link light" href="#"><i class="bi-gear"></i></a></div>
+            <div><a class="nav-link light" href="#"><i class="bi-door-open"></i></a></div>
+            <div><a class="nav-link light" href="#"><i class="bi-folder"></i></a></div>
+            <div><a class="nav-link light" href="#"><i class="bi-file-earmark-text"></i></a></div>
+            <div><a class="nav-link light" href="#"><i class="bi-file-earmark-plus"></i></a></div>
+            <div><a class="nav-link light" href="#"><i class="bi-trash"></i></a></div>
+            <div><a class="nav-link light" href="#"><i class="bi-file-zip"></i></a></div>
+            <div><a class="nav-link light" href="#"><i class="bi-bezier"></i></a></div>
+          </div>
+    </section>
+    <section style="margin-top: -350px; min-height: 600px; padding-left: 20px;">              
+        <div class="container bg-light " style="min-height: 600px;">
+            <div class="nav-top">
+              <div><a href="userPage.html">All</a></div> <div><a class="nav-link disabled" href="undone.html">Undone</a></div> <div><a href="categories.html">Categories</a></div> <div><a href="graphics.html">Graphics</a></div>
+            </div>
+            <form class="form-inline nav-top filter" action="/action_page.php">
+              <div class="form-group">
+                <label for="nameActInp">Name of activity:</label>
+                <input type="text" class="form-control" id="nameActInp">
+              </div>
+              <div class="form-group">
+                <label for="categoryInp">Category:</label>
+                <select class="form-select" id="categoryInp">
+                  <option>Studying</option>
+                  <option>Physical activity</option>
+                  <option>Laisure time</option>
+                  <option>Work</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="typeInp">Type:</label>
+                <select class="form-select" id="typeInp">
+                  <option>Daily activity</option>
+                  <option>Weeekly activity</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="forInp">Planned for the day:</label>
+                <select class="form-select" id="forInp">
+                  <option>Every day</option>
+                  <option>Any day</option>
+                  <option>Sunday</option>
+                  <option>Monday</option>
+                  <option>Tuesday</option>
+                  <option>Wednesday</option>
+                  <option>Thursday</option>
+                  <option>Friday</option>
+                  <option>Saturday</option>
+                </select>
+              </div>
+              <div class="smal-button">
+                <button type="submit" class="btn btn-default btn-outline-primary mx-1">Sort</button>
+              </div>
+            </form>
+            <div class="card-deck mb-3 text-center">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                      <h4 class="my-0 font-weight-normal">Going out</h4>
+                    </div>
+                    <div class="card-body">
+                      <h1 class="card-title pricing-card-title">0 <small class="text-muted">today</small></h1>
+                      <ul class="list-unstyled mt-1 mb-4">
+                        <li>In total: <span>12</span></li>
+                        <li>Average: <span>1</span></li>
+                        <li>Planned: <span>1</span></li>
+                        <li>Dont forget doing the activity...</li>
+                      </ul>
+                      <button type="button" class="btn btn-lg btn-block btn-outline-primary">Edit time</button>
+                    </div>
+                  </div>
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                      <h4 class="my-0 font-weight-normal">Working out</h4>
+                    </div>
+                    <div class="card-body">
+                      <h1 class="card-title pricing-card-title">0 <small class="text-muted">this week</small></h1>
+                      <ul class="list-unstyled mt-1 mb-4">
+                        <li>In total: <span>4</span></li>
+                        <li>Average: <span>1</span></li>
+                        <li>Planned: <span>1</span></li>
+                        <li>Dont forget doing the activity...</li>
+                      </ul>
+                      <button type="button" class="btn btn-lg btn-block btn-outline-primary">Edit time</button>
+                    </div>
+                  </div>      
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                      <h4 class="my-0 font-weight-normal">Making food</h4>
+                    </div>
+                    <div class="card-body">
+                      <h1 class="card-title pricing-card-title">0 <small class="text-muted">today</small></h1>
+                      <ul class="list-unstyled mt-1 mb-4">
+                        <li>In total: <span>12</span></li>
+                        <li>Average: <span>1</span></li>
+                        <li>Planned: <span>1</span></li>
+                        <li>Dont forget doing the activity...</li>
+                      </ul>
+                      <button type="button" class="btn btn-lg btn-block btn-outline-primary">Edit time</button>
+                    </div>
+                  </div>              
+              </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->     
+     <footer class="p-2 bg-dark text-white text-center position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <a href="terms.html" class="text-reset">Terms of use</a>
+                </div>
+                <div class="col-sm-1">
+                    <a href="privacy.html" class="text-reset">Privacy</a>
+                </div>
+            </div>
+        </div>
+     </footer>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

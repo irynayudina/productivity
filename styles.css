@@ -1,0 +1,103 @@
+.fancy_bg{
+    background-color: rgba(128, 255, 0, 0.507);
+}
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+#sidebar > div{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    /* width: 30px;
+    height: 30px; */
+    color: white;
+}
+#sidebar div:hover{
+    transform: scale(1.1);
+    color: #FFC112;
+}
+
+.card-deck{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-top{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    padding-top: 10px;
+}
+
+.nav-top > div{
+    margin-left: 20px;
+}
+
+.smal-button{
+    height: 30px;
+    margin-top: 23px;
+}
+
+.sidenav{
+    width: 3rem;
+}
+
+
+/* For large screen devices  */
+@media only screen and (max-width: 992px) {
+    .nav-top.filter{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 30px;
+        padding-top: 10px;
+    }
+
+    .chart{
+        transform: scale(0.8);
+    }
+    
+}
+
+/* For small screen devices */
+@media only screen and (max-width: 768px) {
+    .nav-top.filter{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        padding-top: 10px;
+    }
+
+    
+    .chart{
+        transform: scale(0.6);
+    }
+}
+
+/* For extremely small screen devices */
+@media only screen and (max-width: 576px) {
+    .nav-top.filter{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        padding-top: 10px;
+    }
+
+    
+    .chart{
+        transform: scale(0.5);
+    }
+}
+
+.card-body{
+    min-width: 230px;
+}
+
+/* #fill{
+    border: 1px solid black;
+} */
